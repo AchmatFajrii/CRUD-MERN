@@ -31,7 +31,7 @@ export const saveUser = async (req, res) => {
 export const updateUser = async (req, res) => {
     try {
         const updatedUser =  await User.updateOne({_id: req.params.id}, {$set: req.body})
-        res.status(200).json(updateUser)
+        res.status(200).json(updatedUser)
     } catch (error) {
         res.status(400).json({message: error.message})
     }
